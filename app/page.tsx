@@ -1,7 +1,5 @@
 import NewPosts from "@/components/NewPosts";
-import { Separator } from "@/components/ui/separator";
 import { getSession } from "@/lib/getSession";
-import Image from "next/image";
 
 // import { Separator } from "@/components/ui/separator";
 export default async function Home() {

@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import axios from "axios";
-import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/Footer";
 // import Providers from "@/context/provider";
 
@@ -22,7 +21,7 @@ export default async function RootLayout({
   // fetch /api/posts
   try {
     // todo change it when deployment
-    const res = await axios.get("http://localhost:3000/api/posts");
+    const res = await axios.get(`http://localhost:3000/api/posts`);
   } catch (error) {}
 
   return (

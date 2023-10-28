@@ -4,10 +4,8 @@ import { redirect } from "next/navigation";
 
 const CreatePostPage = async () => {
   const session = await getSession();
-  console.log(!session);
-
   if (!session) redirect("/signin");
-  return <CreatePost userId={session?.dataObject.user._id || ""} />;
+  return <CreatePost userId={session?.dataObject.user._id} />;
 };
 
 export default CreatePostPage;

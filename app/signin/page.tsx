@@ -16,7 +16,7 @@ const SignInPage = async () => {
     <section className=" max-w-7xl m-auto bg-white border-2 border-[#222]  p-10 lg:p-20 text-center">
       <h2 className=" text-3xl font-bold">Sign In</h2>
       <h4 className=" mt-4 text-[20px] font-semibold">
-        don't have account ?{" "}
+        you do not have account ?{" "}
         <Link href="/signup" className=" text-[#916ccd] hover:text-[#4f4f4f]">
           {" "}
           Sign up
