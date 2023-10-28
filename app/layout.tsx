@@ -3,6 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import axios from "axios";
+import { Separator } from "@/components/ui/separator";
+import Footer from "@/components/Footer";
 // import Providers from "@/context/provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,8 +30,9 @@ export default async function RootLayout({
       <body className={inter.className}>
         {/* <Providers> */}
         <Navbar />
-        <main>{children}</main>
+        {children}
         {/* </Providers> */}
+        <Footer />
       </body>
     </html>
   );

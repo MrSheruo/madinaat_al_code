@@ -16,14 +16,9 @@ export type postSchema = {
   _id?: string;
   title: string;
   breif: string;
-  sections: sectionSchema[];
+  description: string;
   tags: string[];
   userId: string;
   createdAt: Date;
   lastUpdated: Date;
-};
-export type sectionSchema = {
-  indexN: number;
-  title: string;
-  description: string;
 };

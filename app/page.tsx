@@ -1,5 +1,7 @@
 import NewPosts from "@/components/NewPosts";
+import { Separator } from "@/components/ui/separator";
 import { getSession } from "@/lib/getSession";
+import Image from "next/image";
 
 // import { Separator } from "@/components/ui/separator";
 export default async function Home() {
@@ -7,7 +9,7 @@ export default async function Home() {
   const isAuth = session?.authStatues;
 
   return (
-    <main className=" min-h-screen p-10 lg:p-20">
+    <main className="  p-10 lg:p-20 flex flex-col">
       {
         //@ts-ignore
         isAuth ? (

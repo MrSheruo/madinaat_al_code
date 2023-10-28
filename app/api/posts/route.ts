@@ -5,7 +5,7 @@ import User from "@/lib/models/user";
 
 export async function POST(request: NextRequest) {
   const dbConnection = await connectToDB(); // connect to db
-  const { title, sections, tags, userId } = await request.json(); //getting the data from request
+  const { title, breif, tags, userId, description } = await request.json(); //getting the data from request
 
   // Array to store validation errors
   let errors = [];
@@ -16,8 +16,11 @@ export async function POST(request: NextRequest) {
       errors.push("Post title is required");
     }
 
-    if (!sections) {
-      errors.push("Post sections is required");
+    if (!breif) {
+      errors.push("Post breif is required");
+    }
+    if (!description) {
+      errors.push("Post description is required");
     }
 
     if (!tags) {
@@ -45,9 +48,10 @@ export async function POST(request: NextRequest) {
     // Creating the post
     const newPost = new Post({
       title,
-      sections,
+      breif,
       tags,
       userId,
+      description,
     });
 
     await newPost.save(); // Saving the post

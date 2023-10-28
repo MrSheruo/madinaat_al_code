@@ -3,6 +3,7 @@ import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { getSession } from "@/lib/getSession";
+import AvatarComponent from "./AvatarComponent";
 
 const Navbar = async () => {
   const session = await getSession();
@@ -10,11 +11,13 @@ const Navbar = async () => {
   return (
     <header className="flex flex-col w-full max-w-7xl m-auto ">
       <nav className="p-8 flex justify-between items-center flex-col sm:flex-row gap-4 sm:gap-0">
-        <h2 className=" text-3xl font-bold text-[#222]">Madinaat Al-Code</h2>
+        <Link href={"/"}>
+          <h2 className=" text-3xl font-bold text-[#222]">Madinaat Al-Code</h2>
+        </Link>
         {isAuthenticated ? (
           <div className="flex items-center justify-center gap-8">
-            {/* todo User card */}
-            <h2>Hello : {session.dataObject.user.userName}</h2>
+           
+            <AvatarComponent />
             <Button className=" bg-green-600 hover:bg-green-500">
               <Link href="/posts/create">Create Post</Link>
             </Button>

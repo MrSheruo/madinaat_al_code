@@ -6,22 +6,14 @@ const PostSchema = new Schema({
     type: String,
     required: [true, "Post title is required"],
   },
-  sections: [
-    {
-      indexN: {
-        type: Number,
-        required: [true, "Post sections indexN is required"],
-      },
-      title: {
-        type: String,
-        required: [true, "Post sections title is required"],
-      },
-      description: {
-        type: String,
-        required: [true, "Post sections description is required"],
-      },
-    },
-  ],
+  breif: {
+    type: String,
+    required: [true, "Post breif is required"],
+  },
+  description: {
+    type: String,
+    required: [true, "Post description is required"],
+  },
   tags: {
     type: [String],
     required: [true, "Post tags is required"],
