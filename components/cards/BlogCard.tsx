@@ -6,10 +6,10 @@ import { Separator } from "../ui/separator";
 
 const BlogCard = ({ tags, title, _id, breif }: postSchema) => {
   return (
-    <Link href={`/blog/${_id}`}>
-      <div className=" rounded-lg flex flex-col justify-between p-4 gap-1 shadow-lg object-cover bg-white h-80">
+    <Link href={`/posts/${_id}`}>
+      <div className=" rounded-lg flex flex-col justify-evenly px-4 shadow-lg object-cover bg-white h-80">
         <h3>{title}</h3>
-        <div className="flex flex-wrap gap-2 py-4">
+        <div className="flex flex-wrap gap-2 ">
           {tags.map((tag, i) => (
             <Badge key={i}>{tag}</Badge>
           ))}

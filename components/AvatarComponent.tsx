@@ -8,13 +8,14 @@ import {
 } from "@/components/ui/popover";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
+import { userSchema } from "@/lib/types";
 
 type Props = {
   image?: string;
-  name?: string;
+  user?: userSchema;
 };
 
-const AvatarComponent = ({ image, name }: Props) => {
+const AvatarComponent = ({ image, user }: Props) => {
   return (
     <Popover>
       <PopoverTrigger>
@@ -24,8 +25,8 @@ const AvatarComponent = ({ image, name }: Props) => {
         </Avatar>
       </PopoverTrigger>
       <PopoverContent className=" w-fit flex flex-col gap-4">
-        <Link href="/">Something else</Link>
-        <Link href="/users/profile">Profile</Link>
+        <p>Hello : {user?.userName}</p>
+        <Link href={`/users/${user?._id}`}>Profile</Link>
         <Separator />
         <Link
           href="/api/users/signout"

@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import "froala-editor/css/froala_style.min.css";
 import "froala-editor/css/froala_editor.pkgd.min.css";
@@ -47,7 +47,7 @@ const CreatePost = ({ userId }: Props) => {
       userId: userId,
     };
     const { data } = await axios.post("/api/posts", post);
-    console.log(data);
+    window.location.href = `/posts/${data._id}`;
   };
 
   return (

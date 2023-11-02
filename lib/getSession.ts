@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import jwt, { TokenExpiredError, JsonWebTokenError } from "jsonwebtoken";
 import axios from "axios";
 import { authObject } from "./types";
+import { domainName } from "./utils";
 export async function getSession() {
   const token = cookies().get("sessionToken")?.value || null;
   if (!token) {
@@ -17,7 +18,7 @@ export async function getSession() {
   // @ts-ignore
   const userId = decoded?.payload.userId;
   try {
-    const user = await axios.get(`http://localhost:3000/api/users/${userId}`);
+    const user = await axios.get(`http://${domainName}//api/users/${userId}`);
     const data: authObject = {
       authStatues: true,
       dataObject: user.data,

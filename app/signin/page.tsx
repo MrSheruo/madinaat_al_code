@@ -1,4 +1,5 @@
 import FormSignIn from "@/components/FormSignIn";
+import { Button } from "@/components/ui/button";
 import { getSession } from "@/lib/getSession";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -17,8 +18,10 @@ const SignInPage = async () => {
       <h2 className=" text-3xl font-bold">Sign In</h2>
       <h4 className=" mt-4 text-[20px] font-semibold">
         you do not have account ?{" "}
-        <Link href="/signup" className=" text-[#916ccd] hover:text-[#4f4f4f]">
-          {" "}
+        <Link
+          href="/signup"
+          className=" text-[#222] hover:border-b-2 border-[#222] p-[0.2px] hover:text-[#454545]"
+        >
           Sign up
         </Link>
       </h4>

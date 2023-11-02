@@ -13,7 +13,10 @@ const SignUpPage = async () => {
       <h2 className=" text-3xl font-bold">Sign Up</h2>
       <h4 className=" mt-4 text-[20px] font-semibold">
         do you have account ?{" "}
-        <Link href="/signin" className=" text-[#916ccd] hover:text-[#4f4f4f]">
+        <Link
+          href="/signin"
+          className=" text-[#222] hover:border-b-2 border-[#222] p-[0.2px] hover:text-[#454545]"
+        >
           {" "}
           Sign In
         </Link>

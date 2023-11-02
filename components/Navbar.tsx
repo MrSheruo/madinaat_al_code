@@ -16,8 +16,7 @@ const Navbar = async () => {
         </Link>
         {isAuthenticated ? (
           <div className="flex items-center justify-center gap-8">
-           
-            <AvatarComponent />
+            <AvatarComponent user={session.dataObject.user} />
             <Button className=" bg-green-600 hover:bg-green-500">
               <Link href="/posts/create">Create Post</Link>
             </Button>

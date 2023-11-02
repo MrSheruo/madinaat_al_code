@@ -8,14 +8,11 @@ export default async function Home() {
 
   return (
     <main className="  p-10 lg:p-20 flex flex-col">
-      {
-        //@ts-ignore
-        isAuth ? (
-          <h3 className=" text-3xl text-center">Latest posts</h3>
-        ) : (
-          <h3 className=" text-3xl text-center">Sign in to see more</h3>
-        )
-      }
+      {isAuth ? (
+        <h3 className=" text-3xl text-center">Latest posts</h3>
+      ) : (
+        <h3 className=" text-3xl text-center">Sign in to see more</h3>
+      )}
 
       <NewPosts />
     </main>

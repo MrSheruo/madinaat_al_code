@@ -6,7 +6,6 @@ export const connectToDB = async () => {
 
   if (isConnected) return;
   const db = await mongoose.connect(process.env.MONGODB_URI!, {
-    // @ts-ignore
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

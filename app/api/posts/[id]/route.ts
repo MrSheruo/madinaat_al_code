@@ -1,9 +1,10 @@
 import { connectToDB } from "@/lib/models/db";
 import Post from "@/lib/models/post";
-import { NextResponse } from "next/server";
+import User from "@/lib/models/user";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-  req: Request,
+  req: NextRequest,
   { params: { id } }: { params: { id: string } }
 ) {
   const dbConnection = await connectToDB();
@@ -11,6 +12,32 @@ export async function GET(
   return NextResponse.json(post, { status: 200 });
 }
 
-// To do the following actions
-export async function DELETE(req: Request, { params: { id } }: any) {}
-export async function PATCH(req: Request, { params: { id } }: any) {}
+// Todo the following actions
+
+export async function DELETE(
+  req: NextRequest,
+  { params: { id } }: { params: { id: string } }
+) {
+  const dbConnection = await connectToDB();
+  const post = await Post.findByIdAndDelete(id);
+  // delete the post from the user also
+  const user = await User.findByIdAndUpdate(post?.userId, {
+    $pull: { posts: post?._id },
+  });
+
+  return NextResponse.json({
+    message: "Post deleted successfully",
+  });
+}
+export async function PATCH(
+  req: NextRequest,
+  { params: { id } }: { params: { id: string } }
+) {
+  const dbConnection = await connectToDB();
+  const body = await req.json();
+  const post = await Post.findByIdAndUpdate(id, body);
+  return NextResponse.json({
+    message: "Post updated successfully",
+    post,
+  });
+}

@@ -22,3 +22,17 @@ export type postSchema = {
   createdAt: Date;
   lastUpdated: Date;
 };
+
+export type postInPage = {
+  _id?: string;
+  title: string;
+  breif: string;
+  description: string;
+  tags: string[];
+  userId: {
+    _id: string;
+    userName: string;
+  };
+  createdAt: Date;
+  lastUpdated: Date;
+};

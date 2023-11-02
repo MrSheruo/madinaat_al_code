@@ -34,7 +34,6 @@ const FormSignIn = () => {
 
     try {
       const res = await axios.post("/api/users/signup", formData);
-      console.log(res.data.message);
       if (res.data.message === "User already exists") {
         setError("User already exists, please sign in or type a valid email");
       } else {

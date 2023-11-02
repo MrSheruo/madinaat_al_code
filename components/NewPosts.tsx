@@ -30,7 +30,7 @@ const NewPosts = () => {
   useEffect(() => {
     async function getPosts() {
       try {
-        const response = await axios.get("/api/posts/new");
+        const response = await axios.get("/api/posts/latest");
         setPosts(response.data);
       } catch (error: any) {
         setError(error);

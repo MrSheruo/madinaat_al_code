@@ -8,7 +8,7 @@ export async function GET() {
   try {
     const posts = await Post.find();
 
-    return NextResponse.json(posts.slice(-32));
+    return NextResponse.json(posts.slice(-32).reverse());
   } catch (error) {
     // Error handling
     return new NextResponse("Error Fetching Posts", { status: 404 });
